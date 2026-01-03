@@ -17,10 +17,7 @@ async def post_ton_price(bot: Bot):
 
             await bot.send_message(
                 chat_id=Config_Obj.channel_id,
-
-                text=f"{usd} $\n{rub} ₽",
-
-                parse_mode="Markdown"
+                text=f"{usd} $\n{rub} ₽"
             )
 
         except Exception as e:
@@ -35,7 +32,6 @@ async def main():
     dp = Dispatcher()
 
     asyncio.create_task(post_ton_price(bot))
-
     await dp.start_polling(bot)
 
 
