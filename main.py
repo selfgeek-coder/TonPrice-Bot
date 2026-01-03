@@ -4,7 +4,7 @@ from datetime import datetime
 
 from aiogram import Bot, Dispatcher
 
-from getprice import get_ton_price
+from app.getprice import get_ton_price
 from config import Config_Obj
 
 logging.basicConfig(level=logging.INFO)
@@ -35,7 +35,7 @@ async def main():
     dp = Dispatcher()
 
     asyncio.create_task(post_ton_price(bot))
-    
+
     await dp.start_polling(bot)
 
 
